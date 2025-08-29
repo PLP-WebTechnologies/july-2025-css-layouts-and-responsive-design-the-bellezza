@@ -1,0 +1,135 @@
+/* ---------------------------
+   Basic reset + base styles
+---------------------------- */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height: 1.6;
+  color: #222;
+  background: #fafafa;
+}
+
+/* ---------------------------
+   Page layout (CSS Grid)
+   Areas: header / nav / main+aside / footer
+---------------------------- */
+.page {
+  display: grid;
+  gap: 1rem;
+  min-height: 100vh;
+  padding: 1rem;
+  grid-template-areas:
+    "header"
+    "nav"
+    "main"
+    "aside"
+    "footer";
+}
+
+/* Map elements to grid areas */
+.site-header { grid-area: header; }
+.site-nav    { grid-area: nav; }
+.content     { grid-area: main; }
+.sidebar     { grid-area: aside; }
+.site-footer { grid-area: footer; }
+
+/* ---------------------------
+   Header (simple, clean)
+---------------------------- */
+.site-header {
+  background: #2d3e50;
+  color: #fff;
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+}
+.site-header h1 { margin: 0 0 0.25rem; }
+.tagline { margin: 0; opacity: 0.9; }
+
+/* ---------------------------
+   Nav (Flexbox)
+---------------------------- */
+.site-nav {
+  background: #455a64;
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+}
+.site-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;             /* Flexbox for horizontal layout */
+  gap: 1rem;
+  flex-wrap: wrap;           /* Wrap on smaller screens */
+}
+.site-nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+}
+.site-nav a:hover,
+.site-nav a:focus {
+  background: rgba(255,255,255,0.12);
+}
+
+/* ---------------------------
+   Main content & sections
+---------------------------- */
+.content > section,
+.sidebar,
+.site-footer {
+  background: #ffffff;
+  border: 1px solid #e6e6e6;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+/* Card row (Flexbox) */
+.cards {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+.card {
+  flex: 1 1 220px;
+  background: #f6f6f6;
+  border: 1px solid #e6e6e6;
+  border-radius: 6px;
+  padding: 0.75rem;
+}
+
+/* Sidebar image */
+.sidebar img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-top: 0.5rem;
+}
+
+/* Footer */
+.site-footer { text-align: center; color: #606060; }
+
+/* ---------------------------
+   Responsive adjustments
+---------------------------- */
+
+/* Tablet and up: place sidebar to the right of main */
+@media (min-width: 800px) {
+  .page {
+    grid-template-columns: 2fr 1fr;        /* main | aside */
+    grid-template-areas:
+      "header header"
+      "nav    nav"
+      "main   aside"
+      "footer footer";
+  }
+}
+
+/* Small phones: stack nav links vertically for easier taps */
+@media (max-width: 480px) {
+  .site-nav ul { flex-direction: column; }
+  .site-nav a { background: rgba(255,255,255,0.08); }
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>City Park Guide — Responsive Layout</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <div class="page">
+
+    <header class="site-header">
+      <h1>City Park Guide</h1>
+      <p class="tagline">Trails, wildlife, and picnic spots</p>
+    </header>
+
+    <nav class="site-nav" aria-label="Primary">
+      <ul>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#trails">Trails</a></li>
+        <li><a href="#wildlife">Wildlife</a></li>
+        <li><a href="#tips">Visitor Tips</a></li>
+      </ul>
+    </nav>
+
+    <main class="content">
+      <section id="overview">
+        <h2>Overview</h2>
+        <p>
+          Our city park offers open lawns, shaded groves, and a small lake.
+          It’s a calm place to run, read, or picnic with friends.
+        </p>
+      </section>
+
+      <section id="trails">
+        <h2>Trails</h2>
+        <!-- Simple card row (Flexbox) -->
+        <div class="cards">
+          <article class="card">
+            <h3>Lakeside Loop</h3>
+            <p>1.8 km — flat gravel path with views of ducks and reeds.</p>
+          </article>
+          <article class="card">
+            <h3>Oak Ridge</h3>
+            <p>2.5 km — gentle climb under tall oaks; good shade at noon.</p>
+          </article>
+          <article class="card">
+            <h3>Meadow Walk</h3>
+            <p>1.2 km — open grass, wildflowers in late spring.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="wildlife">
+        <h2>Wildlife</h2>
+        <ul>
+          <li>Common: squirrels, ducks, herons</li>
+          <li>Seasonal: monarch butterflies (late Aug–Sept)</li>
+          <li>Please observe from a distance and don’t feed animals.</li>
+        </ul>
+      </section>
+
+      <section id="tips">
+        <h2>Visitor Tips</h2>
+        <ul>
+          <li>Best hours: early morning or late afternoon</li>
+          <li>Bring water and sunscreen on warm days</li>
+          <li>Leashed dogs are welcome on all trails</li>
+        </ul>
+      </section>
+    </main>
+
+    <aside class="sidebar">
+      <h2>Quick Info</h2>
+      <ul class="quick">
+        <li><strong>Open:</strong> 6am – 9pm</li>
+        <li><strong>Bathrooms:</strong> Near the lake</li>
+        <li><strong>Picnic Areas:</strong> North meadow</li>
+      </ul>
+      <img
+        src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=1200&auto=format&fit=crop"
+        alt="Path through a green city park with trees"
+      />
+    </aside>
+
+    <footer class="site-footer">
+      <p>&copy; 2025 City Park Guide. Built with CSS Grid & Flexbox.</p>
+    </footer>
+
+  </div>
+</body>
+</html>
